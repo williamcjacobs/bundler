@@ -1,7 +1,6 @@
 # Inline Bundler 
 
-This is a PHP file bundler that can be easily used in the `<head>` section of html.
-It can be used to combine JS and CSS files, but accepts any file extensions.
+This is a PHP file bundler that can be used in the `<head>` section of html to combine JS and CSS files dynamically.
 
 # Usage:
 

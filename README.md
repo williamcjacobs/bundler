@@ -10,7 +10,7 @@ This is a PHP file bundler that can be used in the `<head>` section of html to c
 To send the above files as a single file to the client (web browser),
 you can combine the two css files in a php file like so:
   
-    <?php include('bundler.php') ?>
+    <?php include('pathtobundler/bundler.php') ?>
   
     <link rel="stylesheet" href="<?= bundle_files(['main_styles.min.css', 'some_other_styles.min.css'], '1.0') ?>" >
 

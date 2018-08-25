@@ -3,7 +3,7 @@
 /** BEGIN CONFIG **/
 
 
-$DEV_MODE = true; //If set to true files won't be cached. (Useful for Development)
+$DEV_MODE = false; //If set to true files won't be cached. (Useful for Development)
 
 $TMP_FOLDER = 'tmp/'; //The folder, relative to this file, that will store the cached versions of bundled files.
 

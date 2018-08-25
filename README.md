@@ -52,7 +52,7 @@ For a list of available hash algorithms, you can look [here](http://php.net/manu
 
 # Functions: 
 
-`function bundle_files($filepathArray, $version='', $extension='')`
+`function bundle_files($filepathArray, $version='', $extension='')` - Returns the path (relative to the current file) to the generated bundled file.
 
 `function empty_bundle_cache()` - Clears the entire cache.
 

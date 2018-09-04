@@ -106,7 +106,7 @@ function bundle_path($filepathArray, $version='', $extension=''){
 		// Supports ".." parent directory selectors but not single "." current directory selectors.
 		// Also works for double extension files like ".min.js"
 
-		$ex = explode('.',str_replace('..', '', $filepathArray[0]));
+		$ex = explode('.', str_replace('..', '', reset($filepathArray)));
 		$extension = '';
 
 		for ($i = 1; $i<sizeof($ex); $i++) {
@@ -119,6 +119,13 @@ function bundle_path($filepathArray, $version='', $extension=''){
 	// Hash the combined file paths and version using the specified algorithm ( $BUNDLE_HASH_ALGO )
 	// Each version generates its own file.
 	$file_name = hash($BUNDLE_HASH_ALGO, $paths.$version);
+
+	//Create the temporary folder if it doesn't exist.
+	if(!file_exists($TMP_FOLDER)){
+
+		mkdir($TMP_FOLDER);
+	}
+
 	$path = $TMP_FOLDER.$file_name.$extension;
 
 	return $path;

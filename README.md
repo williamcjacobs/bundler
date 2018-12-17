@@ -38,7 +38,7 @@ will produce a different file path than
 
 `bundle_files(['some_other_styles.min.css', 'main_styles.min.css'], '1.0')` 
 
-Also note that the version is is hashed into the file name.
+Also note that the version is hashed into the file name.
 
 # Config:
 
@@ -58,4 +58,4 @@ For a list of available hash algorithms, you can look [here](http://php.net/manu
 
 `function delete_cached_bundle($scriptList, $version='', $extension='')` - Deletes the cached version of a specific bundled file.
 
-`function bundle_path($filepathArray, $version='', $extension='')` - Used internally to get the path of a specific file bundle. (Not normally useful.)
+`function bundle_path($filepathArray, $version='', $extension='')` - Used internally to get the path of a specific file bundle. Returns a string representing a generated path for the specified bundle and version without creating a bundle. 

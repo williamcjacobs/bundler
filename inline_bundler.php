@@ -35,6 +35,7 @@ function delete_cached_bundle($filepathArray, $version='', $extension=''){
 
 	if ( file_exists($path) ) {
 
+		// Delete the file if it exists.
 		return unlink($path);
 	}
 
@@ -48,7 +49,8 @@ function bundle_files($filepathArray, $version='', $extension=''){
 	//If no extension is provided the extension from the first file will be used.
 	global $DEV_MODE, $TMP_FOLDER, $BUNDLE_HASH_ALGO;
 
-	$version = (empty($version)?'':$version.($DEV_MODE?'d'.time():''));
+	// If we're in development mode, we append the time to the version so that the browser won't cache the bundled file.
+	$version = (empty($version)? '':$version.($DEV_MODE?'d'.time():''));
 	$contents = '';
 
 	if ( empty($filepathArray) ) {
@@ -67,10 +69,11 @@ function bundle_files($filepathArray, $version='', $extension=''){
 		return $path;
 	}
 
-	//
 	foreach ($filepathArray as $filePath) {
-		
-		$contents .= file_get_contents($filePath);
+	
+		// Move to a new line and append the contents of the next file in the bundle.	
+			
+		$contents .= "\n".file_get_contents($filePath);
 	}
 
 	file_put_contents($path, $contents);
